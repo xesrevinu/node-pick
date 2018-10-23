@@ -2,7 +2,7 @@ const cheerio = require('cheerio')
 const R = require('ramda')
 const defaultOperators = require('./operators')
 
-const debugLog = require('debug')('pickpick:index')
+const debugLog = require('debug')('node-pick:index')
 
 const debug = R.curry((label, x) => {
   debugLog(label + ': ', x)
@@ -103,10 +103,9 @@ const getSelectValue = (rule, $) => {
     if (isObject(op) || R.is(String, op) || !op) {
       let current = null
       let nextSelect = null
-
       if (R.is(String, op)) {
         current = op
-        nextSelect = {}
+        nextSelect = null
       } else if (isObject(op)) {
         current = R.reject(isSelectNode, op)
         nextSelect = R.filter(isSelectNode, op)
@@ -116,7 +115,7 @@ const getSelectValue = (rule, $) => {
         R.chain(
           R.compose(
             elem => {
-              if (R.keys(nextSelect).length > 0) {
+              if (!R.isNil(nextSelect)) {
                 const nextResult = R.mapObjIndexed((item, key) => {
                   return getSelectValue(item, $)
                 }, nextSelect)
@@ -162,7 +161,7 @@ function nodePick(html, opt = { log: false }) {
     const compose = []
 
     if (log) {
-      compose.push(x => console.log('EasyNode Result: \n', JSON.stringify(x)))
+      compose.push(x => console.log('Node-pick Result: \n', JSON.stringify(x)))
     }
 
     if (!R.is(Object, rule)) {

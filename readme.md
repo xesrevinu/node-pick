@@ -2,6 +2,12 @@
 
 ## Dom selection tool based on cheerio.js
 
+### Install
+
+```bash
+yarn add node-pick
+```
+
 ### Rule
 
 ```js

@@ -18,7 +18,8 @@
   ],
   "scripts": {
     "test": "mocha test/*.js --colors --exit",
-    "test-watch": "DEBUG=pickpick* mocha test/*.js --colors --watch"
+    "test-watch": "mocha test/*.js --colors --watch",
+    "debug-test": "DEBUG=node-pick* mocha test/*.js --colors --watch"
   },
   "devDependencies": {
     "chai": "^4.2.0",

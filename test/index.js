@@ -59,7 +59,12 @@ describe('Pick-Pick Test', function() {
     html = fs.readFileSync(path.resolve(__dirname, './test.html')).toString()
   })
 
-  it('output', function() {
-    expect(nodePick(html, { log: true }).output(rule))
+  it('expect pick value', function() {
+    const data = nodePick(html).output(rule)
+
+    expect(data).to.be.a('object')
+    expect(data.title[0]).to.be.eq('Hello World!')
+    expect(data.apple[0]).to.be.eq('Apple')
+    // TODO:
   })
 })

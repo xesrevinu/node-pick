@@ -1,0 +1,10 @@
+*.log
+
+node_modules
+
+.vscode
+
+# Mac
+.DS_Store
+
+yarn-error.log

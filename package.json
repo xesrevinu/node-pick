@@ -1,0 +1,41 @@
+{
+  "name": "node-pick",
+  "version": "1.0.0",
+  "main": "./src/index.js",
+  "license": "MIT",
+  "author": {
+    "name": "xiaokekeT",
+    "email": "121441909zk@gmail.com"
+  },
+  "keywords": [
+    "spider",
+    "crawler",
+    "cheerio",
+    "ramda",
+    "html",
+    "css",
+    "selector"
+  ],
+  "scripts": {
+    "test": "mocha test/*.js --colors --exit",
+    "test-watch": "DEBUG=pickpick* mocha test/*.js --colors --watch"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "eslint": "^5.7.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "mocha": "^5.2.0",
+    "prettier": "^1.14.3"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "debug": "^4.1.0",
+    "ramda": "^0.25.0"
+  }
+}

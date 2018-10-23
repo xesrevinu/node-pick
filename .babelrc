@@ -1,0 +1,27 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-pipeline-operator", { "proposal": "minimal" }],
+    [
+      "ramda",
+      {
+        "useES": true
+      }
+    ]
+  ],
+  "env": {
+    "debug": {
+      "sourceMap": "inline",
+      "retainLines": true
+    }
+  }
+}
